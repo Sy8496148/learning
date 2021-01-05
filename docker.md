@@ -23,6 +23,10 @@ ex:
 docker run -idt -p 5000:5000 xxx:xx（指定镜像标签） 
 docker run -idt -v /home/sy/searchsvr/contain/:/app/content -p 5000:5000 telsearch:0.0.1
 
+启动一个空容器，再后台运行
+
+docker run -d ubuntu:16.04 /bin/sh -c "while true; do echo hello world; sleep 1;done"
+
 
 
 #### 进入容器
@@ -109,6 +113,12 @@ docker push docker.cnns/shiyu/telsearch:0.0.1
 
 
 
+#### 容器打包成镜像
+docker commit  (容器名称或id) (镜像名称:0.0.1)
+
+
+
+
 #### 查看docker日志
 
 docker logs [OPTIONS] CONTAINER
@@ -146,7 +156,7 @@ $ docker logs -t --since="2018-02-08T13:23:37" CONTAINER_ID
 查看某时间段日志：
 
 ```shell
-$ docker logs -t --since="2018-02-08T13:23:37" --until "2018-02-09T12:23:37" CONTAINER_I
+$ docker logs -t --since="2018-02-08T13:23:37" --until "2018-02-09T12:23:37" CONTAINER_ID
 ```
 
 

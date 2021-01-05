@@ -71,7 +71,7 @@
 
 ### 退回版本
 
-- git reflog
+- git log
 - git reset --hard [id]
 
 

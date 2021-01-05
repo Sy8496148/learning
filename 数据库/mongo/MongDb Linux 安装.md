@@ -108,7 +108,21 @@
       "dbAdmin", "readWrite"
       ]
   }
-  ) # 创建管理该数据库的用户
+  )
+  
+  use screen
+  db.createUser(
+  { 
+      user: "cnns",
+      pwd: "cnns.net",
+      roles: [
+      "dbAdmin", "readWrite"
+      ]
+  }
+  )
+  
+  
+  # 创建管理该数据库的用户
   
   # Read：允许用户读取指定数据库
   # readWrite：允许用户读写指定数据库
@@ -162,4 +176,10 @@
   pstree -p | grep mongod
 
   find / -name "*.log" | xargs grep "vl" 
+
+#### docker 部署
+
+docker pull mongo:latest
+
+docker run -p 27017:27017 -v /data/mongo:/data/db --name mongo -d mongo:latest
 
