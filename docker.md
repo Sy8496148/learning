@@ -167,3 +167,20 @@ $ docker logs -t --since="2018-02-08T13:23:37" --until "2018-02-09T12:23:37" CON
 docker update --restart=always xxx
 ```
 
+
+
+### docker打包镜像文件并且加载
+
+- 打包文件
+
+```
+docker save -o 要保存的文件名  要保存的镜像
+docker save -o cc.tar bb:v1.0
+```
+
+- 加载文件
+
+```
+docker load < cc.tar
+```
+
