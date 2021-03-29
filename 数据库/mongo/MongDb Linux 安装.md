@@ -183,3 +183,5 @@ docker pull mongo:latest
 
 docker run -p 27017:27017 -v /data/mongo:/data/db --name mongo -d mongo:latest
 
+docker run --net ocean_ -v $PWD:/data/db --name mongo -d mongo:latest
+
